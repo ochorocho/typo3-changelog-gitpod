@@ -11,5 +11,6 @@ do
     echo "$extension"
     cd "$docPath" || exit
     dockrun_t3rd makehtml-no-cache
+    gp open "$docPath/Documentation-GENERATED-temp/Result/project/0.0.0/_buildinfo/warnings.txt"
   fi
 done
