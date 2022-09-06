@@ -11,8 +11,7 @@ tasks:
       docker tag ghcr.io/t3docs/render-documentation:v3.0.dev28 t3docs/render-documentation:develop
       git clone https://github.com/TYPO3/typo3.git typo3-core
     command: |
-      eval "$(docker run --rm t3docs/render-documentation:develop show-shell-commands)"
-      dockrun_t3rd makehtml-no-cache
+      echo "Run 'bash ./render.sh' to generate all docs."
 
 # gp open ./Documentation-GENERATED-temp/Result/project/0.0.0/_buildinfo/warnings.txt
 # cd ./Documentation-GENERATED-temp/Result/project/0.0.0/
