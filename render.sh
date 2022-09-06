@@ -1,11 +1,15 @@
 #!/usr/bin/bash
 
-CORE_EXTENSIONS=$(ls typo3/sysext)
+CORE_EXTENSIONS=$(ls typo3-core/typo3/sysext)
 CURRENT_DIR=$(pwd)
+eval "$(docker run --rm t3docs/render-documentation:develop show-shell-commands)"
 
 for extension in $CORE_EXTENSIONS
 do
-  cd $CURRENT_DIR/typo3/sysext/$extension/Documentation
-  eval "$(docker run --rm t3docs/render-documentation:develop show-shell-commands)"
-  dockrun_t3rd makehtml-no-cache
+  docPath="$CURRENT_DIR/typo3-core/typo3/sysext/$extension/"
+  if [ -d "$docPath" ] ; then
+    echo "$extension"
+    cd "$docPath"
+    dockrun_t3rd makehtml-no-cache
+  fi
 done
