@@ -9,7 +9,7 @@ do
   docPath="$CURRENT_DIR/typo3-core/typo3/sysext/$extension/"
   if [ -d "$docPath" ] ; then
     echo "$extension"
-    cd "$docPath"
+    cd "$docPath" || exit
     dockrun_t3rd makehtml-no-cache
   fi
 done
