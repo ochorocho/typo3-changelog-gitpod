@@ -1,5 +1,7 @@
 # Render TYPO3 Changelog in GitPod
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](http://gitpod.io/#/https://github.com/ochorocho/typo3-changelog-gitpod)
+
 ## Render current main branch
 
 1. Open http://gitpod.io/#/https://github.com/ochorocho/typo3-changelog-gitpod
